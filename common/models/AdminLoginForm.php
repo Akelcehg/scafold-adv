@@ -1,4 +1,5 @@
 <?php
+
 namespace common\models;
 
 use Yii;
@@ -70,7 +71,7 @@ class AdminLoginForm extends Model
     protected function getAdmin()
     {
         if ($this->_user === null) {
-            $this->_user = Admin::findByAdminname($this->username);
+            $this->_user = Admin::findByUsername($this->username);
         }
 
         return $this->_user;
