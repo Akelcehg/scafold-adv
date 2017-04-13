@@ -34,6 +34,7 @@
                     /*['label' => 'Gii', 'icon' => 'file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'dashboard', 'url' => ['/debug']],*/
                     ['label' => 'Users', 'icon' => 'dashboard', 'url' => ['/user']],
+                    ['label' => 'Post', 'icon' => 'dashboard', 'url' => ['/post']],
                     ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
                         'label' => 'Same tools',
