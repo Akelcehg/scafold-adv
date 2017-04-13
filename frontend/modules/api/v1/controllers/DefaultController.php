@@ -2,13 +2,15 @@
 
 namespace app\modules\api\v1\controllers;
 
+use frontend\modules\api\base\RestController;
+use Yii;
 use yii\helpers\Json;
 use yii\web\Controller;
 
 /**
  * Default controller for the `api` module
  */
-class DefaultController extends Controller
+class DefaultController extends RestController
 {
     /**
      * Renders the index view for the module
@@ -16,6 +18,7 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
+
         $data = [
             'dadas' => 123,
             'string' => 'ssss',
@@ -24,7 +27,7 @@ class DefaultController extends Controller
                 '2' => '3',
             ]
         ];
-        return $data;
+        return \Yii::$app->request->post();
     }
 }
 
