@@ -18,7 +18,6 @@ class DefaultController extends RestController
      */
     public function actionIndex()
     {
-
         $data = [
             'dadas' => 123,
             'string' => 'ssss',
@@ -27,7 +26,7 @@ class DefaultController extends RestController
                 '2' => '3',
             ]
         ];
-        return \Yii::$app->request->post();
+        return array_merge(\Yii::$app->request->post(),$data);
     }
 }
 
