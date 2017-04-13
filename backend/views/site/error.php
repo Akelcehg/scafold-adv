@@ -21,14 +21,14 @@ $this->title = $name;
                 <?= nl2br(Html::encode($message)) ?>
             </p>
 
-            <p>
+            <!--<p>
                 The above error occurred while the Web server was processing your request.
                 Please contact us if you think this is a server error. Thank you.
-                Meanwhile, you may <a href='<?= Yii::$app->homeUrl ?>'>return to dashboard</a> or try using the search
+                Meanwhile, you may <a href='<? /*= Yii::$app->homeUrl */ ?>'>return to dashboard</a> or try using the search
                 form.
-            </p>
+            </p>-->
 
-            <form class='search-form'>
+            <!--<form class='search-form'>
                 <div class='input-group'>
                     <input type="text" name="search" class='form-control' placeholder="Search"/>
 
@@ -37,7 +37,7 @@ $this->title = $name;
                         </button>
                     </div>
                 </div>
-            </form>
+            </form>-->
         </div>
     </div>
 

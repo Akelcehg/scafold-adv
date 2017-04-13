@@ -187,4 +187,26 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    /*public function search($params)
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => $this->_mainQuery,
+        ]);
+
+        $dataProvider->sort = [
+            'defaultOrder' => [
+                'created_at' => SORT_DESC,
+            ],
+        ];
+
+        // Загружаем данные с формы в модель
+        if (!$this->load($params)) {
+            return $dataProvider;
+        }
+
+        $this->filterAttributes();
+
+        return $dataProvider;
+    }*/
 }

@@ -52,4 +52,4 @@ Asset for Admin LTE
 
 https://github.com/dmstr/yii2-adminlte-asset
 1) composer require dmstr/yii2-adminlte-asset "2.*"
-2)
+2) composer require himiklab/yii2-sortable-grid-view-widget "2.*"

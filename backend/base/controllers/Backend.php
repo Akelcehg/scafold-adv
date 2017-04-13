@@ -4,6 +4,7 @@ namespace backend\base\controllers;
 
 
 use Exception;
+use himiklab\sortablegrid\SortableGridAction;
 use Yii;
 use yii\base\ErrorException;
 use yii\helpers\Url;
@@ -39,7 +40,7 @@ class Backend extends Controller
      * Подключение общих поведений
      * @return array
      */
-    public function behaviors()
+    /*public function behaviors()
     {
         return [
             'access' => [
@@ -58,7 +59,7 @@ class Backend extends Controller
                 ],
             ],
         ];
-    }
+    }*/
 
     /**
      * Initialization backend controller
@@ -68,8 +69,8 @@ class Backend extends Controller
     {
         if ($this->modelClass === null) {
             //HttpError::the500('Please, set "modelClass" property in your child controller');
-            //throw new HttpException('Please, set "modelClass" property in your child controller');
-            echo "Dsadsa";
+            throw new HttpException(500, 'Please, set "modelClass" property in your child controller');
+            //echo "Dsadsa";
         }
 
         parent::init();
@@ -98,7 +99,7 @@ class Backend extends Controller
     {
         $items = parent::actions();
 
-        if($this->modelClass) {
+        if ($this->modelClass) {
             $items['sort'] = [
                 'class' => SortableGridAction::className(),
                 'modelName' => $this->modelClass,
@@ -203,8 +204,8 @@ class Backend extends Controller
         $model = new $this->modelClass;
 
         $pkName = $model->primaryKey();
-        if(is_array($pkName)) {
-            if(count($pkName) > 1) {
+        if (is_array($pkName)) {
+            if (count($pkName) > 1) {
                 throw new ErrorException('Composite foreign keys are not allowed.');
             }
             $pkName = $pkName[0];
@@ -311,7 +312,7 @@ class Backend extends Controller
         $model = new $this->modelClass;
 
         $keys = Yii::$app->request->post('selectedIds');
-        if(!is_array($keys)) {
+        if (!is_array($keys)) {
             $keys = explode(',', $keys);
         }
 
@@ -367,7 +368,7 @@ class Backend extends Controller
 
         $model = $model::findOne($expandRowKey);
 
-        if(empty($model)) {
+        if (empty($model)) {
             return '<div class="alert alert-danger">No data found</div>';
         }
 
