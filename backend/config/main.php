@@ -13,19 +13,36 @@ return [
     'bootstrap' => ['log'],
     'modules' => [],
     'components' => [
-        'request' => [
-            'csrfParam' => '_csrf-backend',
-            'baseUrl'=>'/backend',
-        ],
         'user' => [
-            'identityClass' => 'common\models\User',
+            'identityClass' => 'common\models\Admin',
             'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+            'identityCookie' => [
+                'name' => '_backendUser', // unique for backend
+                'httpOnly' => true
+            ]
         ],
         'session' => [
-            // this is the name of the session cookie used for login on the backend
-            'name' => 'advanced-backend',
+            'name' => 'PHPBACKSESSID',
+            'savePath' => sys_get_temp_dir(),
         ],
+        'request' => [
+            'cookieValidationKey' => 'uV3dh7ItQRBpQ9VpJ2xG',
+            'csrfParam' => '_backendCSRF',
+            'baseUrl' => '/backend',
+        ],
+
+        /*        'request' => [
+                    'csrfParam' => '_csrf-backend',
+                    'baseUrl'=>'/backend',
+                ],
+                'user' => [
+                    'identityClass' => 'common\models\User',
+                    'enableAutoLogin' => true,
+                    'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+                ],
+                'session' => [
+                    'name' => 'advanced-backend',
+                ],*/
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -40,7 +57,7 @@ return [
         ],
 
         'urlManager' => [
-            'scriptUrl'=>'/backend/index.php',
+            'scriptUrl' => '/backend/index.php',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
