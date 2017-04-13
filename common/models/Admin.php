@@ -78,7 +78,7 @@ class Admin extends ActiveRecord implements IdentityInterface
      * @param string $username
      * @return static|null
      */
-    public static function findByAdminname($username)
+    public static function findByUsername($username)
     {
         return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
     }
@@ -132,6 +132,11 @@ class Admin extends ActiveRecord implements IdentityInterface
     public function getAuthKey()
     {
         return $this->auth_key;
+    }
+
+    public function getUsername()
+    {
+        return $this->username;
     }
 
     /**

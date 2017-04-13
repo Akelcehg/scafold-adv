@@ -221,7 +221,7 @@ use yii\helpers\Html;
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="user-image" alt="User Image"/>
-                        <span class="hidden-xs">Alexander Pierce</span>
+                        <span class="hidden-xs"><?= Yii::$app->user->identity->username ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- User image -->
@@ -229,13 +229,12 @@ use yii\helpers\Html;
                             <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle"
                                  alt="User Image"/>
 
-                            <p>
-                                Alexander Pierce - Web Developer
+                            <!--<p>
                                 <small>Member since Nov. 2012</small>
-                            </p>
+                            </p>-->
                         </li>
                         <!-- Menu Body -->
-                        <li class="user-body">
+                        <!--<li class="user-body">
                             <div class="col-xs-4 text-center">
                                 <a href="#">Followers</a>
                             </div>
@@ -245,15 +244,15 @@ use yii\helpers\Html;
                             <div class="col-xs-4 text-center">
                                 <a href="#">Friends</a>
                             </div>
-                        </li>
+                        </li>-->
                         <!-- Menu Footer-->
                         <li class="user-footer">
-                            <div class="pull-left">
+                            <!--<div class="pull-left">
                                 <a href="#" class="btn btn-default btn-flat">Profile</a>
-                            </div>
+                            </div>-->
                             <div class="pull-right">
                                 <?= Html::a(
-                                    'Sign out',
+                                    'Выйти',
                                     ['/site/logout'],
                                     ['data-method' => 'post', 'class' => 'btn btn-default btn-flat']
                                 ) ?>
