@@ -16,7 +16,15 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        return ['a' => '312'];
+        $data = [
+            'dadas' => 123,
+            'string' => 'ssss',
+            'dsadasdsa' => [
+                '1' => '2',
+                '2' => '3',
+            ]
+        ];
+        return $data;
     }
 }
 
