@@ -21,6 +21,5 @@ class Module extends \yii\base\Module
     {
         parent::init();
         Yii::$app->response->format = Response::FORMAT_JSON;
-        // custom initialization code goes here
     }
 }
