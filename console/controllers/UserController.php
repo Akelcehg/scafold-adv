@@ -19,6 +19,7 @@ class UserController extends Controller
         $user->setPassword('user');
         $user->generateAuthKey();
         $user->save();
+
         echo "Generating Admin" . PHP_EOL;
         $admin = new Admin();
         $admin->username = 'admin';
