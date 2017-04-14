@@ -47,16 +47,16 @@ return [
             'scriptUrl' => '/index.php',
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            //'enableStrictParsing' => true,
             'rules' => [
-                'class' => 'yii\rest\UrlRule',
-                'controller' => 'post',
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/v1/posts'],
             ],
         ],
     ],
-    'modules' => [
+    /*'modules' => [
         'api' => [
             'class' => 'app\modules\api\v1\Module',
         ],
-    ],
+    ],*/
     'params' => $params,
 ];
