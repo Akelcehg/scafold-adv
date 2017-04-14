@@ -44,10 +44,10 @@ class Post extends ActiveRecord
     {
         return [
             'id' => 'ID',
-            'text' => 'Text',
-            'theme' => 'Theme',
-            'author' => 'Author',
-            'publisher_id' => 'Publisher ID',
+            'text' => 'Текст',
+            'theme' => 'Тема',
+            'author' => 'Автор',
+            'publisher_id' => 'Публикатор',
         ];
     }
 
