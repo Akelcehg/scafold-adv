@@ -50,4 +50,14 @@ class Post extends ActiveRecord
             'publisher_id' => 'Publisher ID',
         ];
     }
+
+    public function extraFields()
+    {
+        return ['users'];
+    }
+
+    public function getUsers()
+    {
+        return $this->hasOne(User::className(), ['id' => 'publisher_id']);
+    }
 }
