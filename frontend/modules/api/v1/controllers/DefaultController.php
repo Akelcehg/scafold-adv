@@ -29,5 +29,3 @@ class DefaultController extends RestController
         return array_merge(\Yii::$app->request->post(),$data);
     }
 }
-
-
