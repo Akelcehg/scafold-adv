@@ -19,7 +19,8 @@ class PostsController extends ActiveController
     public function prepareDataProvider()
     {
         $searchModel = new PostSearch();
-        return $searchModel->search(\Yii::$app->request->queryParams);
+        $searchModel->load(\Yii::$app->request->queryParams, '');
+        return $searchModel->search();
     }
 
 }

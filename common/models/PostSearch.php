@@ -35,11 +35,9 @@ class PostSearch extends Post
     /**
      * Creates data provider instance with search query applied
      *
-     * @param array $params
-     *
      * @return ActiveDataProvider
      */
-    public function search($params)
+    public function search()
     {
         $query = Post::find();
 
@@ -50,7 +48,7 @@ class PostSearch extends Post
         ]);
 
         //$this->load($params,'');
-        $this->load($params);
+        //$this->load($params);
 
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails

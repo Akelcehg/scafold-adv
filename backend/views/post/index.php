@@ -7,14 +7,31 @@ use yii\helpers\Html;
 $this->title = 'Posts';
 $this->params['breadcrumbs'][] = $this->title;
 
+$colorPluginOptions = [
+    'showPalette' => true,
+    'showPaletteOnly' => true,
+    'showSelectionPalette' => true,
+    'showAlpha' => false,
+    'allowEmpty' => false,
+    'preferredFormat' => 'name',
+    'palette' => [
+        [
+            "white", "black", "grey", "silver", "gold", "brown",
+        ],
+        [
+            "red", "orange", "yellow", "indigo", "maroon", "pink"
+        ],
+        [
+            "blue", "green", "violet", "cyan", "magenta", "purple",
+        ],
+    ]
+];
 
 $gridColumns = [
-    ['class' => 'kartik\grid\SerialColumn'],
+    //['class' => 'kartik\grid\SerialColumn'],
+    ['class' => 'kartik\grid\CheckboxColumn'],
     [
         'attribute' => 'id',
-    ],
-    [
-        'attribute' => 'text',
     ],
     [
         'attribute' => 'theme',
@@ -36,13 +53,14 @@ $gridColumns = [
         'updateOptions' => ['title' => 'Редактировать', 'data-toggle' => 'tooltip'],
         'deleteOptions' => ['title' => 'Удалить', 'data-toggle' => 'tooltip'],
     ],
-    ['class' => 'kartik\grid\CheckboxColumn']
 ];
 echo GridView::widget([
     'dataProvider' => $dataProvider,
     'filterModel' => $searchModel,
     'columns' => $gridColumns,
-    'containerOptions' => ['style' => 'overflow: auto'], // only set when $responsive = false
+    'headerRowOptions' => ['class' => 'kartik-sheet-style'],
+    'filterRowOptions' => ['class' => 'kartik-sheet-style'],
+    //'containerOptions' => ['style' => 'overflow: auto'],
     /*'beforeHeader' => [
         [
             'columns' => [
@@ -63,12 +81,12 @@ echo GridView::widget([
         '{toggleData}'
     ],
     'pjax' => false,
-    'bordered' => false,
-    'striped' => false,
-    'condensed' => false,
+    'bordered' => true,
+    'striped' => true,
+    'condensed' => true,
     'responsive' => true,
     'hover' => true,
-    'floatHeader' => false,
+    'floatHeader' => true,
     'floatHeaderOptions' => ['scrollingTop' => 'true'],
     'showPageSummary' => false,
     'panel' => [
